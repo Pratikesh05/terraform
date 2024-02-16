@@ -18,7 +18,7 @@ provider "aws"{
     }
 
 
-  variable  "vpc_security_groups_id" {
+  variable  "vpc_security_groups_ids" {
      default = "sg-0d0cb75235df91852"
     }
     
