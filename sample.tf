@@ -6,7 +6,7 @@ provider "aws"{
      ami = var.image_id
      instance_type = "t2_micro"
      key_name = "canada-keypairr"
-     vpc_security_groups_ids = var.vpc_security_groups_ids
+     vpc_security_groups_ids = "sg-0d0cb75235df91852"
      tags = {
          name = "pavan"
      }
@@ -18,7 +18,4 @@ provider "aws"{
     }
 
 
-  variable  "vpc_security_groups_ids" {
-     default = "sg-0d0cb75235df91852"
-    }
     
