@@ -4,7 +4,7 @@ provider "aws"{
  
  resource"aws_instance" "my_instance" {
      ami = var.image_id
-     instance_type = "t2_micro"
+     instance_type = "t2.micro"
      key_name = "canada-keypairr"
      vpc_security_group_ids = ["sg-0d0cb75235df91852"]
      tags = {
