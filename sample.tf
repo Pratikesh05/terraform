@@ -6,7 +6,7 @@ provider "aws"{
      ami = var.image_id
      instance_type = "t2_micro"
      key_name = "canada-keypairr"
-     vpc_security_groups_ids = var.vpc_security_groups_id
+     vpc_security_groups_ids = var.vpc_security_groups_ids
      tags = {
          name = "pavan"
      }
