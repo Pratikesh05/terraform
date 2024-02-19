@@ -1,4 +1,4 @@
-provider "aws" {
+provider "aws"{
      region = "sa-east-1"
 }
 
@@ -21,7 +21,7 @@ resource "aws_instance" "my_anotherinstance"{
          name = instance_0r }
 
 } 
- variable "image_id" {
+ variable "image_id"{
     default = "ami-0623e7a7b489397c1"
     description = "(optional) describe your variable"
  }
