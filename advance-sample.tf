@@ -2,7 +2,7 @@ provider "aws" {
     region = "ca-central-1"
 }
 
-resource "aws_instance" "my_instance{
+resource "aws_instance" "my_instance" {
      ami = var.image_id
      instance_type = "t2_micro"
      key_name = "canda keyparir"
@@ -10,7 +10,9 @@ resource "aws_instance" "my_instance{
      tags = { 
          name = instance_01 }
 
-resource "aws_instance" "my_anotherinstance{
+}
+    
+resource "aws_instance" "my_anotherinstance"{
      ami = var.image_id
      instance_type = "t3_micro"
      key_name = "canda keyparir"
