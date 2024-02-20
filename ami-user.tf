@@ -2,7 +2,7 @@ provider "aws"{
     region = "ca-central-01"
 }
 
-resource "aws_iam" "my_user"{
+resource "aws_iam" "my_ima_user"{
      arn = "https://console.aws.amazon.com/iam/"
       name = "user01"
           password ="123456"
