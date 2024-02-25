@@ -2,6 +2,7 @@ provider "aws"{
      region= "sa-east-1"
 }
 
+
  resource "aws_eks_cluster"{
       name = "demo-cluster"
      role_arn = arn:aws:iam::730335216603:role/aws-service-role/eks.amazonaws.com/AWSServiceRoleForAmazonEKS
