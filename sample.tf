@@ -12,7 +12,6 @@ provider "aws"{
      }
  }
 
-
  variable "image_id" {
      default = "ami-0a2e7efb4257c0907"
     }
