@@ -11,7 +11,7 @@ resource "aws_instance" "my_instance" {
          name = instance_01 }
 
 }
-    
+
 resource "aws_instance" "my_anotherinstance"{
      ami = var.image_id
      instance_type = "t3_micro"
