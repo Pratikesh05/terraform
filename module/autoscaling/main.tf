@@ -54,3 +54,4 @@ resource "aws_launch_configuration_lc-mobile"{
             systemctl enable httpd
 
             EOF
+}
