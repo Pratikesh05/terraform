@@ -56,13 +56,15 @@ resource "aws_launch_configuration_lc-mobile"{
             EOF
 }
 
+
+
 resource "aws_autoscaling_group"{
-      name = "${var.project}-as-home"
+      name = "${var.project}-as-laptop"
       max _size = var.max_size
       min_size = var.min_size
       desired_capacity = var.desired_capacity
       avalibality_zone = var.avalibality_zone
-      aws_launch_configuration = aws_launch_configuration.lc.home.name           
+      aws_launch_configuration = aws_launch_configuration.lc.laptop.name           
        tags = {
             key = name
             value  = home
@@ -71,8 +73,8 @@ resource "aws_autoscaling_group"{
       }
 
 
-resource "aws_autoscaling_policy" "as_policy_home"{
-      aws_autoscaling_group_name = aws_autoscaling_policy-as_home_name
+resource "aws_autoscaling_policy" "as_policy_laptop"{
+      aws_autoscaling_group_name = aws_autoscaling_policy-as_laptop_name
       name = "${var.project}-as-policy_home"
       policy_type = "predictivescaling"
       predictive_scaling_configuration {
@@ -90,7 +92,58 @@ resource "aws_autoscaling_policy" "as_policy_home"{
                               namespace = "AWS/EC2"
                               dimension{
                                     name = "AutosaclingGroupName"
-                                    value = "aws_autoscaling_policy-as_home_name"
+                                    value = "aws_autoscaling_policy-as_laptop_name"
+
+                              }
+                    
+                        }
+                  }     start = "Average"
+
+            }
+            
+            }
+            
+      }
+
+
+}
+
+
+resource "aws_autoscaling_group"{
+      name = "${var.project}-as-mobile"
+      max _size = var.max_size
+      min_size = var.min_size
+      desired_capacity = var.desired_capacity
+      avalibality_zone = var.avalibality_zone
+      aws_launch_configuration = aws_launch_configuration.lc.home.name           
+       tags = {
+            key = name
+            value  = home
+            proprgate_at_launch = true
+       }
+      }
+
+
+resource "aws_autoscaling_policy" "as_policy_mobile"{
+      aws_autoscaling_group_name = aws_autoscaling_policy-as_mobile_name
+      name = "${var.project}-as-policy_mobile"
+      policy_type = "predictivescaling"
+      predictive_scaling_configuration {
+            metric_specification {
+                  target_value = 50
+                  predefine_metric_specification {
+                        predefine_metric_type = "ASGTotalutilization"
+                        resource_label = " "
+                  }
+            customized_scaling_metric_specfication{
+                  metric_data_queries{
+                        id = "scaling"
+                        metric_start{
+                              metric_name = "CPUUtilization"
+                              namespace = "AWS/EC2"
+                              dimension{
+                                    name = "AutosaclingGroupName"
+                                    value = "aws_autoscaling_policy-as_mobile_name"
 
                               }
                     
