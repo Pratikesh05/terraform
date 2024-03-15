@@ -1,0 +1,10 @@
+variable "image_id"{}
+variable "image_type"{}
+variable "key_pair"{}
+variable "security_group_id"{}
+variable "subnet_ids"{}
+variable "max_size"{}
+variable "min_size"{}
+variable "desired_capacity"{}
+variable "subnet_ids"{}
+variable "azs"{}
